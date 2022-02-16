@@ -97,7 +97,7 @@ int main()
     cout << "Введите рейтинг." << endl;
     cin >> grade;
     
-    tudent.SetName(name);
+    student.SetName(name);
     cout << "Имя студента : " << student.GetName() << endl;
     student.SetAge(age);
     cout << "Возраст студента : " << student.GetAge() << endl;
