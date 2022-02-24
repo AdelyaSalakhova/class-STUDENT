@@ -21,13 +21,13 @@ public:
 	EMPLOYEE(string uname, int uage, string uorganization, string uposition, double usalary, double uexperience, char ugender) : name(uname), age(uage), organization(uorganization), position(uposition), salary(usalary), experience(uexperience), gender(ugender)
 	{
 		count++;
-	} // Конструктор создания объекта.
+	} // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃРѕР·РґР°РЅРёСЏ РѕР±СЉРµРєС‚Р°.
 
 	void GetWorkInfo() {
-		cout << "Место работы : " << organization << endl;
-		cout << "Занимаемая должность : " << position << endl;
-		cout << "Стаж работы : " << experience << endl;
-		cout << "Заработная плата : " << salary << endl;
+		cout << "РњРµСЃС‚Рѕ СЂР°Р±РѕС‚С‹ : " << organization << endl;
+		cout << "Р—Р°РЅРёРјР°РµРјР°СЏ РґРѕР»Р¶РЅРѕСЃС‚СЊ : " << position << endl;
+		cout << "РЎС‚Р°Р¶ СЂР°Р±РѕС‚С‹ : " << experience << endl;
+		cout << "Р—Р°СЂР°Р±РѕС‚РЅР°СЏ РїР»Р°С‚Р° : " << salary << endl;
 	}
 
 	void SetPosition(string position) {
@@ -39,9 +39,9 @@ public:
 	}
 
 	void GetPersonalInfo() {
-		cout << "Ф.И.О : " << name << endl;
-		cout << "Пол : " << gender << endl;
-		cout << "Возраст : " << age << endl;
+		cout << "Р¤.Р.Рћ : " << name << endl;
+		cout << "РџРѕР» : " << gender << endl;
+		cout << "Р’РѕР·СЂР°СЃС‚ : " << age << endl;
 	}
 
 	void SalaryComparsion(EMPLOYEE& second) {
@@ -52,30 +52,30 @@ public:
 			cout << second.name << " has equal salary with " << this->name << endl;
 		}
 		else cout << this->name << " has better salary than " << second.name << endl;
-	}// Сравнение заработных плат.
+	}// РЎСЂР°РІРЅРµРЅРёРµ Р·Р°СЂР°Р±РѕС‚РЅС‹С… РїР»Р°С‚.
 	
 	bool operator< (EMPLOYEE const& other) {
 		return this->salary < other.salary;
-	}// Перегрузка оператора, сравнение заработных плат.
+	}// РџРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР°, СЃСЂР°РІРЅРµРЅРёРµ Р·Р°СЂР°Р±РѕС‚РЅС‹С… РїР»Р°С‚.
     
 	bool operator == (EMPLOYEE const& other) {
 		return this->salary == other.salary;
-	}// перегрузка оператора ==, приверка заработных плат на равенство.
+	}// РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С‚РѕСЂР° ==, РїСЂРёРІРµСЂРєР° Р·Р°СЂР°Р±РѕС‚РЅС‹С… РїР»Р°С‚ РЅР° СЂР°РІРµРЅСЃС‚РІРѕ.
 
 	void PositionAssignment(EMPLOYEE& second) {
 		this->position = second.position;
-	}// Присвоение одинаковых должностей двум объектам.
+	}// РџСЂРёСЃРІРѕРµРЅРёРµ РѕРґРёРЅР°РєРѕРІС‹С… РґРѕР»Р¶РЅРѕСЃС‚РµР№ РґРІСѓРј РѕР±СЉРµРєС‚Р°Рј.
     
 	static int GetCount() {
 		return count;
-	}// Статический метод, получение количества сотрудников.
+	}// РЎС‚Р°С‚РёС‡РµСЃРєРёР№ РјРµС‚РѕРґ, РїРѕР»СѓС‡РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ.
 
 	~EMPLOYEE() {
 		count--;
-	}// Деструктор.
+	}// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ.
 };
 
-int EMPLOYEE::count = 0; // Инициализация статической переменной вне класса.
+int EMPLOYEE::count = 0; // РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ СЃС‚Р°С‚РёС‡РµСЃРєРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№ РІРЅРµ РєР»Р°СЃСЃР°.
 
 int main() {
 
@@ -84,22 +84,22 @@ int main() {
 	EMPLOYEE obj2("Salakhova_Adelya", 18, "REU", "Student", 10000, 1, 'F');
 	EMPLOYEE obj3("Shirokov_Roman", 18, "REU", "Student", 15000, 100, 'M');
 
-	EMPLOYEE objects[3] = { obj1, obj2, obj3 };// Создание массива объектов класса EMPLOYEE.
+	EMPLOYEE objects[3] = { obj1, obj2, obj3 };// РЎРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР° РѕР±СЉРµРєС‚РѕРІ РєР»Р°СЃСЃР° EMPLOYEE.
 
-	cout << "Насчитывается " <<  EMPLOYEE::GetCount() << " сотрудника." << endl << endl; // вывод количества объектов.
+	cout << "РќР°СЃС‡РёС‚С‹РІР°РµС‚СЃСЏ " <<  EMPLOYEE::GetCount() << " СЃРѕС‚СЂСѓРґРЅРёРєР°." << endl << endl; // РІС‹РІРѕРґ РєРѕР»РёС‡РµСЃС‚РІР° РѕР±СЉРµРєС‚РѕРІ.
 	for (int i = 0; i < 3; i++) {
 		 objects[i].GetPersonalInfo();
 		 objects[i].GetWorkInfo();
-	}// Вывод информации о каждом объекте.
+	}// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєР°Р¶РґРѕРј РѕР±СЉРµРєС‚Рµ.
 	
-	objects[0].SalaryComparsion(objects[2]); // Сравнение заработных плат двух объектов.
+	objects[0].SalaryComparsion(objects[2]); // РЎСЂР°РІРЅРµРЅРёРµ Р·Р°СЂР°Р±РѕС‚РЅС‹С… РїР»Р°С‚ РґРІСѓС… РѕР±СЉРµРєС‚РѕРІ.
 	cout << endl;
-	objects[0].PositionAssignment(objects[2]); // Присвоение объекту должности другого объекта.
+	objects[0].PositionAssignment(objects[2]); // РџСЂРёСЃРІРѕРµРЅРёРµ РѕР±СЉРµРєС‚Сѓ РґРѕР»Р¶РЅРѕСЃС‚Рё РґСЂСѓРіРѕРіРѕ РѕР±СЉРµРєС‚Р°.
 	cout << endl;
-	objects[0].SetSalary(2734); //  Увеличение текущей заработной платы объекта на 2734.
+	objects[0].SetSalary(2734); //  РЈРІРµР»РёС‡РµРЅРёРµ С‚РµРєСѓС‰РµР№ Р·Р°СЂР°Р±РѕС‚РЅРѕР№ РїР»Р°С‚С‹ РѕР±СЉРµРєС‚Р° РЅР° 2734.
 	cout << endl;
 	for (int i = 0; i < 3; i++) {
 		objects[i].GetPersonalInfo();
 		objects[i].GetWorkInfo();
-	}// Вывод информации о каждом объекте.
+	}// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєР°Р¶РґРѕРј РѕР±СЉРµРєС‚Рµ.
 }
