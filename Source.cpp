@@ -62,8 +62,13 @@ public:
 		return this->salary == other.salary;
 	}// перегрузка оператора ==, приверка заработных плат на равенство.
 
+	EMPLOYEE& operator = (EMPLOYEE const& other) {
+		this->position = other.position;
+		return *this;
+	}
+
 	void PositionAssignment(EMPLOYEE& second) {
-		this->position = second.position;
+		*this = second ;
 	}// Присвоение одинаковых должностей двум объектам.
     
 	static int GetCount() {
